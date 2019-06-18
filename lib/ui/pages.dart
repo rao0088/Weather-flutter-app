@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     }else{
 
-      print('nothing');
+      _citys ='delhi';
     }
 
   }
@@ -107,13 +107,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: <Widget>[
                   ListTile(
                     title: Text(
-                      datas['main']['temp'].toString(),
+                      datas['main']['temp'].toString() +"C",
                       style: TextStyle(
                         fontSize: 25.0,
                         fontWeight: FontWeight.bold,
                       ),
+                      textAlign: TextAlign.center,
                     ),
-                  )
+                  ),
+
+                  Text("humidity:${datas['main']['humidity'].toString()}\n"
+                      "MIN temp : ${datas['main']['temp_min'].toString()} C\n"
+                      "MAx temp : ${datas['main']['temp_max'].toString()} C \n",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+
                 ],
               ),
             );
